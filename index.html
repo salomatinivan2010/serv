@@ -1,43 +1,278 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    <title>Andrew's Profile | Home</title>
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    <meta name="author" content="Andrew Li">
+    <meta name="description" content="Andrew Li's personal profile website! You can find out more about me or my projects on it. 🥺">
+    <meta name="keywords" content="andrew li, website, code, coding, profile">
+    <meta property="og:image" content="img/ico.svg">
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    <!-- Mini icon on tab -->
+    <link rel="icon" href="img/ico.svg" type="image/ico">
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    <!-- css libraries -->
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script defer>
+        // alert
+        if (window.confirm('You are viewing an old website. The new one is @ https://andrewli.site. If you click "ok" you will be redirected to the new page, otherwise click cancel')) {
+            window.location.href='https://andrewli.site'
+        }
+    </script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+        <div class="alert alert-warning alert-dismissible show fixed-top" role="alert">
+            You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.
+            <button type="button" class="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <![endif]-->
+
+    <!-- Bootstrap navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html" title="Home"><img src="img/ico.svg" width="30" height="30"
+                class="d-inline-block align-top img-fluid hoverable" alt="Circuit Logo"> Andrew's Profile</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home<span class="sr-only"></span></a>
+                <a class="nav-item nav-link" href="projects.html">Projects</a>
+                <a class="nav-item nav-link" href="pdf/resume.pdf">Resume</a>
+                <a class="nav-item nav-link" href="contact.html">Contact</a>
+                <a class="nav-item nav-link" href="http://blog.andrewli.site/">Blog</a>
+            </div>
+        </div>
+    </nav>
+    <!-- End Bootstrap navbar -->
+    
+    <div class="top">
+        <div class="block blue" style="opacity: .9">
+            <h1 class="code-title"><p class="typer"></p></h1>
+            <div class="centering"><a class="arrow" href="#about"></a></div>
+        </div>
+    </div>
+
+    <main>
+        <div id="about" class="block about_me">
+            <div class="inner">
+                <h1 class="main_h">About Me</h1>
+                <!-- <script src="https://gist.github.com/Zeyu-Li/99b8bdc5c138619b24ed2b374b5b05e7.js"></script> -->
+                <p class="quote"><br>👋 Hey, I'm a <b>creative</b> and <b>hardworking programmer</b> that takes initiative and
+                    has a thirst for knowledge. I am can do <b>front-end</b> and <b>back-end development</b> along with some <b>game dev</b>, 
+                    however, my knowledge expends beyond code to include robotics and engineering,
+                    marketing, design, music, and business. If you are looking to add me on your
+                    team or want to contact me, click on <a href="contact.html">contact</a>.<br><br> 
+                    
+                    I am currently attending the
+                    <b>University of Alberta</b> to study computer science. My projects, skills, and resume are at the bottom
+                    of the page. With over <b>100 open source projects</b> on GitHub (which can be found in <a href="projects.html#github">the projects tab</a>), I can help turn your dreams into reality!</p><br>
+            </div>
+        </div>
+        
+        <!-- skills -->
+        <div class="blue" id="skills">
+            <div class="code-table container-fluid">
+                <div class="box">
+                    <h2><img src="img/1.svg" class="icon"> Front End</h2>
+                    <ul>
+                        <li><img alt="HTML5" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" /> HTML</li>
+                        <li><img alt="CSS3" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" /> CSS</li>
+                        <li><img alt="JavaScript" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" /> JavaScript</li>
+                        <li><img src="https://www.vectorlogo.zone/logos/webassembly/webassembly-icon.svg" alt="WebAssembly" width="28" height="28"/> WebAssembly</li>
+                        <li><img alt="React" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" /> React</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h2><img src="img/2.svg" class="icon"> Back End</h2>
+                    <ul>
+                        <li><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="c++" width="32" height="32"/> C/C++</li>
+                        <li><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="c#" width="32" height="32"/> C#</li>
+                        <li><img alt="Python" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" /> Python</li>
+                        <li><img alt="Node.js" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" /> Node.js</li>
+                        <li><img alt="SQL" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" /> SQL</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h2><img src="img/3.svg" class="icon"> Libraries</h2>
+                    <ul>
+                        <li><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-original.svg" alt="django" width="32" height="32"/> Django</li>
+                        <li><img alt="React" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" /> React/React Native</li>
+                        <li><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="32" height="32"/> Express</li>
+                        <li><img alt="electron" width="28px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/electron/electron.png" /> Electron.js</li>
+                    </ul>
+                </div>
+
+                <div class="box">
+                    <h2 class="misc"><img src="img/4.svg" class="icon"> Other</h2>
+                    <ul>
+                        <li><img alt="Unity" src="https://img.icons8.com/fluent/32/000000/unity.png"/> Unity</li>
+                        <li><img alt="Unreal Engine" src="https://img.icons8.com/nolan/32/unreal-engine.png"/> Unreal</li>
+                        <li><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="32" height="32"/> Git/GitHub</li>
+                        <li><img alt="Lua" title="Lua" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/lua/lua.png" /> Lua</li>
+                        <li><img alt="React" width="32px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/latex/latex.png" /> LaTeX</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h2><img src="img/5.svg" class="icon"> Designer</h2>
+                    <ul>
+                        <li><img alt="Photoshop" src="https://img.icons8.com/fluent/32/000000/adobe-photoshop.png"/> Adobe Photoshop</li>
+                        <li><img alt="Illustrator" src="https://img.icons8.com/color/32/000000/adobe-illustrator.png"/> Adobe Illustrator</li>
+                        <li><img alt="After Effects" src="https://img.icons8.com/color/32/000000/adobe-after-effects.png"/> Adobe After Effects/ Premiere Pro</li>
+                        <li><img alt="Blender" src="https://img.icons8.com/color/32/000000/blender-3d.png"/> Blender</li>
+                        <li><img alt="Fusion 360" src="https://img.icons8.com/color/32/000000/autodesk-fusion-360.png"/> Fusion 360</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h2><img src="img/6.svg" class="icon"> Learning</h2>
+                    <ul>
+                        <li><img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="32" height="32"/> AWS</li>
+                        <li><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tensorflow/tensorflow.png" alt="TensorFlow" title="TensorFlow" width="32" height="32"/> TensorFlow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="project_sample">
+            <h1 class="main_h">Projects</h1><br>
+            <!-- if JavaScript is not enabled -->
+            <noscript>Enable JavaScript to run this app properly. 😞</noscript>
+            <p style="max-width: 960px; margin: 0 auto;">A full list of projects can be found in the <a href="projects.html">projects tab</a> or by clicking <a href="projects.html">here</a>. 
+                The following is just a sample of completed projects. A full list of GitHub projects can also be found in the projects tab but <a href="projects.html#github">this link</a> will take you directly to it. </p>
+            <div class="project"><br>
+                <div class="project-item">
+                    <h2>Project 1: Django Ecommerce Website</h2>
+                    <p>w/ Django + Bootstrap: <a class="text-muted"><del>link</del></a> (not available due to high AWS EC2 costs)<br></p>
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><a href="https://github.com/Zeyu-Li/django_ecommerce_app#demo" target="_target"><img src="img/django1.jpg" title="Django Project"></a></div>
+                                <div class="swiper-slide"><a href="https://github.com/Zeyu-Li/django_ecommerce_app#demo" target="_target"><img src="img/django2.jpg" title="Django Project"></a></div>
+                                <div class="swiper-slide"><a href="https://github.com/Zeyu-Li/django_ecommerce_app#demo" target="_target"><img src="img/django3.jpg" title="Django Project"></a></div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                </div><hr>
+                <div class="project-item">
+                    <h2 id="game2">Project 2: Lua Runner</h2>
+                    <p>An NPM package with more than <b>1,600 downloads</b></a>
+                        <br><a href="https://www.npmjs.com/package/lua-runner"><img src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="NPM logo" title="NPM package - Lua Runner"
+                        class="show-img" style="margin-top: 10px;"></a></p>
+                        <p>Try out the NPM package here: <a href="https://www.npmjs.com/package/lua-runner">npmjs.com/package/lua-runner</a></p>
+                </div><hr>
+
+                <div class="project-item">
+                    <h2>Project 3: Emoji Finder</h2>
+                    <p>Find the emoji you want <a href="https://zeyu-li.github.io/emojis-finder/build/index.html" target="_target" id="contact">here
+                        <br><img src="img/emoji.png" alt="emoji finder" title="image of emoji finding website"
+                            class="show-img"></a>Made with React</p>
+                </div><hr>
+
+                <div class="project-item">
+                    <h2>Project 4: Soulless - Unity Game Jam</h2>
+                    <p>made with Unity at a 48h game jam - Play now by clicking the <a href="projects.html#game" id="contact">link
+                        <br><img src="img/game_screenshot.jpg" alt="Unity game jam screenshot" title="Game Jam Screenshot"
+                        class="show-img"></a></p>
+                        <p>View the source code <a href="https://github.com/Zeyu-Li/Quarantined_Game_Jam">here</a></p>
+                </div><hr>
+
+                <h1 class="main_h">Quick Links</h1>
+                <div class="links">
+                    <p>📄 <b>Resume:</b> <a id="contact" target="_blank" href="pdf/resume.pdf">resume.pdf</a><br></p>
+                    <p>📣 <b>Contact page:</b> link <a id="contact" target="_blank" href="contact.html">here</a></p>
+                    <p>✉️ <b>Email:</b> <a id="contact" href="mailto: zeyu.li23@gmail.com">zeyu.li23@gmail.com</a></p>
+                    <p>📰 <b>Blog:</b> <a id="contact" href="http://blog.andrewli.site/">blog.andrewli.site</a></p><br>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- footer -->
+    <footer class="footer" style="margin-top: 10px;">
+        <div class="footer-top">
+            <p class="footer-note">&copy; 2021 Andrew Li. All Rights Reserved.
+                <a class="backtotop" href="#" title="Back to Top">&#9650; Back to top</a>
+            </p>
+        </div>
+        <hr class="divider">
+
+        <div class="footer-bottom">
+            <ul class="bottom">
+                <li><a href="#">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="pdf/resume.pdf">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="http://blog.andrewli.site/">Blog</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+
+    <script src="js/swiper.js"></script>
+    <script>
+        $(document).ready(function() {
+            let words = ["frontend", "backend", "JavaScript", "Python", "for you"]
+            let delay_speed = 300
+            new TypeIt(".typer", {
+                speed: 50
+            })
+                .type("<b>Andrew can <br>code</b> "+words[0], {delay: 1000, speed: 35})
+                .delete(words[0].length, {delay: delay_speed, speed: 45})
+                .type(words[1], {delay: 1000})
+                .delete(words[1].length, {delay: delay_speed})
+                .type(words[2], {delay: 1000})
+                .delete(words[2].length, {delay: delay_speed})
+                .type(words[3], {delay: 1000})
+                .delete(words[3].length, {delay: delay_speed})
+                .type(words[4], {speed:100})
+                .go();
+                // <b>Andrew can <br>code</b> for you
+        })
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P581DCCBN0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-P581DCCBN0');
+    </script>
+</body>
+</html>
